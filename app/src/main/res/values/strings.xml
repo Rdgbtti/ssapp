@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ssapp</string>
+    <string name="title_activity_form_login">FormLogin</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hint_nome_completo">Nome Completo</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_senha">Senha</string>
+    <string name="txt_button_entrar">Entrar</string>
+    <string name="txt_button_criar_conta">Criar Conta</string>
+    <string name="txt_button_cadastrar">Cadastrar</string>
+    <string name="txt_versao">Versão 1.0.0</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_cadastro">Cadastro</string>
+    <string name="title_activity_esqueceu_senha">Esqueceu Senha</string>
+    <string name="frase_activity_cadastro">Cadastre-se agora mesmo no SSAPP.</string>
+    <string name="frase_activity_esqueceu_senha">Informe seu e-mail para recebimento de uma nova senha</string>
+    <string name="txt_button_esqueceu_senha">Esqueceu senha</string>
+    <string name="txt_button_sair_da_minha_conta">Sair da minha conta</string>
+    <string name="title_activity_meu_perfil">Meu perfil</string>
+    <string name="title_activity_para_voce">Para você</string>
+
+
+</resources>
