@@ -25,6 +25,8 @@
     <string name="txt_button_sair_da_minha_conta">Sair da minha conta</string>
     <string name="title_activity_meu_perfil">Meu perfil</string>
     <string name="title_activity_para_voce">Para você</string>
+    <string name="title_activity_adicionar_dados">Adicionar Dados</string>
+    <string name="frase_adicione_sua_marcacao">Abaixo adicione sua marcação</string>
 
 
 </resources>

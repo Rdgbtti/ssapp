@@ -14,8 +14,6 @@ class FormMeuPerfil : AppCompatActivity() {
     private lateinit var binding: ActivityFormMeuPerfilBinding
     private val db = FirebaseFirestore.getInstance()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormMeuPerfilBinding.inflate(layoutInflater)
