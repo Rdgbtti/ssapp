@@ -30,8 +30,10 @@ class FormCadastro : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btVoltar.setOnClickListener {
-            val intent = Intent(this,FormLogin::class.java)
+            val intent = Intent(this, FormLogin::class.java)
             startActivity(intent)
+        }
+
 
         binding.btCadastrar.setOnClickListener { view ->
             val nome = binding.editNomeCompleto.text.toString()
@@ -51,14 +53,12 @@ class FormCadastro : AppCompatActivity() {
                             val snackbar = Snackbar.make(
                                 view,
                                 "Sucesso ao cadastrar usuário!",
-                                Snackbar.LENGTH_SHORT
-
-                            )
-                            snackbar.setBackgroundTint(Color.BLUE)
-                            snackbar.show()
-                            binding.editNomeCompleto.setText("")
-                            binding.editEmail.setText("")
-                            binding.editSenha.setText("")
+                                Snackbar.LENGTH_SHORT)
+                                snackbar.setBackgroundTint(Color.BLUE)
+                                snackbar.show()
+                                binding.editNomeCompleto.setText("")
+                                binding.editEmail.setText("")
+                                binding.editSenha.setText("")
 
                             val usuatiosMap = hashMapOf(
                                 "uid" to uid,
@@ -87,7 +87,6 @@ class FormCadastro : AppCompatActivity() {
 
                     }
             }
-        }
         }
     }
 }
