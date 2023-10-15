@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.benedetti.ssapp.databinding.ActivityFormDadosPrincipalBinding
 import com.benedetti.ssapp.model.Menu
 import com.benedetti.ssapp.view.home.TelaPrincipal
+import com.benedetti.ssapp.view.perfil.FormMeuPerfil
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FormDadosPrincipal : AppCompatActivity() {
@@ -21,6 +22,12 @@ class FormDadosPrincipal : AppCompatActivity() {
             val intent = Intent(this, TelaPrincipal::class.java)
             startActivity(intent)
         }
+
+        binding.btnHistorico.setOnClickListener {
+            val intent = Intent(this, FormHistorico::class.java)
+            startActivity(intent)
+        }
+
         binding.btnAdicionar.setOnClickListener {
             clicarBotaoAdicionar()
         }
@@ -42,7 +49,7 @@ class FormDadosPrincipal : AppCompatActivity() {
     }
     fun clicarBotaoAdicionar() {
         val intent = Intent(this, FormAdicionarDados::class.java)
-        //intent.putExtra("segmento",recuperDados());
+        intent.putExtra("segmento",recuperDados());
         startActivity(intent)
     }
 }

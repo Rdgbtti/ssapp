@@ -67,19 +67,19 @@ class TelaPrincipal : AppCompatActivity(), AdapterMenu.ClickMenu {
         val icone1 = Menu(R.drawable.baseline_water_drop_24, "Açucar \n no sangue", "Diabetes")
         listaMenu.add(icone1)
 
-        val icone2 = Menu(R.drawable.baseline_water_drop_24, "Pressão \n arterial","Pressão")
+        val icone2 = Menu(R.drawable.ic_pressao, "Pressão \n arterial","Pressão")
         listaMenu.add(icone2)
 
-        val icone3 = Menu(R.drawable.baseline_water_drop_24, "Peso \n corporal","Peso")
+        val icone3 = Menu(R.drawable.ic_peso, "Peso \n corporal","Peso")
         listaMenu.add(icone3)
 
         val icone4 = Menu(R.drawable.ic_person, "Perfil \n","Clique")
         listaMenu.add(icone4)
 
-        val icone5 = Menu(R.drawable.baseline_water_drop_24, "Compartilhar \n", "Clique")
+        val icone5 = Menu(R.drawable.ic_compartilhar, "Compartilhar \n", "Clique")
         listaMenu.add(icone5)
 
-        val icone6 = Menu(R.drawable.baseline_water_drop_24, "Sair \n","Clique")
+        val icone6 = Menu(R.drawable.ic_logout, "Sair \n","Clique")
         listaMenu.add(icone6)
     }
     override fun clickMenu(menu: Menu) {

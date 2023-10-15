@@ -27,6 +27,7 @@
     <string name="title_activity_para_voce">Para você</string>
     <string name="title_activity_adicionar_dados">Adicionar Dados</string>
     <string name="frase_adicione_sua_marcacao">Abaixo adicione sua marcação</string>
+    <string name="title_activity_historico_dados">Histórico Dados</string>
 
 
 </resources>
