@@ -10,17 +10,13 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import android.view.Window
 import android.widget.TextView
-import androidx.compose.material3.AlertDialog
-import androidx.core.content.FileProvider
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.benedetti.ssapp.R

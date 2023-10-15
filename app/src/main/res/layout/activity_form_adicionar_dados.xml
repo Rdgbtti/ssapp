@@ -108,7 +108,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     app:boxStrokeColor="@color/dark_cyan_red"
@@ -121,10 +121,10 @@
                         android:id="@+id/txtData"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Data"
+                        android:hint="@string/data"
                         android:inputType="date"
                         android:maxLines="1"
-                        android:padding="15dp"
+                        android:padding="10dp"
                         android:textSize="18sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -137,7 +137,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     app:boxStrokeColor="@color/dark_cyan_red"
@@ -150,10 +150,10 @@
                     android:id="@+id/txtHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Hora"
+                    android:hint="@string/hora"
                     android:inputType="datetime"
                     android:maxLines="1"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:textSize="18sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -165,7 +165,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     app:boxStrokeColor="@color/dark_cyan_red"
@@ -175,44 +175,17 @@
                     style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtdadoUm"
+                        android:id="@+id/txtMarcacao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="DadoUm"
                         android:inputType="text"
+                        android:hint="Marcação"
                         android:maxLines="1"
                         android:padding="15dp"
                         android:textSize="18sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtInputLayoutDadoDois"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/title_adicione_sua_marcacao"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    app:boxStrokeColor="@color/dark_cyan_red"
-                    app:hintTextColor="@color/black"
-                    app:errorTextColor="@color/red"
-                    app:errorEnabled="true"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtdadoDois"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="DadoDois"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:padding="15dp"
-                        android:textSize="18sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btCadastrar"
                     android:layout_width="match_parent"

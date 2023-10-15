@@ -33,6 +33,9 @@
     <string name="n_o">Não</string>
     <string name="hist_rico">Histórico</string>
     <string name="adiciionar">Adiciionar</string>
+    <string name="conte_do_relacionado">Conteúdo relacionado</string>
+    <string name="data">Data</string>
+    <string name="hora">Hora</string>
 
 
 </resources>

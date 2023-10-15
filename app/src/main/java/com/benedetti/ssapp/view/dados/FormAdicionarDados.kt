@@ -25,6 +25,7 @@ class FormAdicionarDados : AppCompatActivity() {
     private val usuarioAtual = FirebaseAuth.getInstance().currentUser?.uid
     val uid = auth.currentUser?.uid.toString()
 
+
     private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +39,12 @@ class FormAdicionarDados : AppCompatActivity() {
         }
 
         binding.btCadastrar.setOnClickListener { view ->
+
             val data = binding.txtData.text.toString()
             val hora = binding.txtHora.text.toString()
-            val dadoUm = binding.txtdadoUm.text.toString()
-            val dadoDois = binding.txtdadoDois.text.toString()
+            val marcacao = binding.txtMarcacao.text.toString()
 
-            if (dadoUm.isEmpty() || dadoDois.isEmpty()) {
+            if (marcacao.isEmpty() || data.isEmpty() || hora.isEmpty()) {
                 val snackbar =
                     Snackbar.make(view, "Preencha todos os campos!", Snackbar.LENGTH_SHORT)
                 snackbar.setBackgroundTint(Color.RED)
@@ -51,32 +52,33 @@ class FormAdicionarDados : AppCompatActivity() {
             } else {
                 val snackbar = Snackbar.make(
                     view,
-                    "Sucesso ao cadastrar usuário!",
+                    "Sucesso ao incluir dados!",
                     Snackbar.LENGTH_SHORT
                 )
                 snackbar.setBackgroundTint(Color.BLUE)
                 snackbar.show()
-                binding.txtdadoUm.setText("")
-                binding.txtdadoDois.setText("")
+                binding.txtData.setText("")
+                binding.txtHora.setText("")
+                binding.txtMarcacao.setText("")
+
 
                 val usuatiosMap = hashMapOf(
                     "data" to data,
                     "hora" to hora,
-                    "dadoUm" to dadoUm,
-                    "dadoDois" to dadoDois
+                    "txtMarcacao" to marcacao,
+                    "uid" to usuarioAtual,
+                    "segmento" to recuperDados()
+
                 )
-                db.collection("Marcacoes").document(uid)
+                db.collection("Marcacoes").document()
                     .set(usuatiosMap).addOnCompleteListener {
                         Log.d("db_create_marcacao", "Sucesso ao salvar os dados do usuário!")
                     }.addOnFailureListener {
 
                     }.addOnFailureListener { exception ->
                         val mensagemErro = when (exception) {
-                            is FirebaseAuthWeakPasswordException -> "Digite uma senha com no mínimo 6 caracteres!"
-                            is FirebaseAuthInvalidCredentialsException -> "Digite um email válido"
-                            is FirebaseAuthUserCollisionException -> "Usuário já cadastrado"
                             is FirebaseNetworkException -> "Sem conexão com a internet!(1014)"
-                            else -> " Erro ao cadastrar o usuário. Tente novamente"
+                            else -> " Erro ao inserir os dados"
                         }
                         val snackbar = Snackbar.make(view, mensagemErro, Snackbar.LENGTH_LONG)
                         snackbar.setBackgroundTint(Color.RED)
@@ -84,6 +86,7 @@ class FormAdicionarDados : AppCompatActivity() {
 
                     }
             }
+        }
 
 
             if (usuarioAtual != null) {
@@ -106,7 +109,6 @@ class FormAdicionarDados : AppCompatActivity() {
             }
 
         }
-    }
 
     private fun recuperDados(): String? {
         val segmento = intent.getStringExtra("segmento")
