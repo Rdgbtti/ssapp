@@ -28,6 +28,11 @@
     <string name="title_activity_adicionar_dados">Adicionar Dados</string>
     <string name="frase_adicione_sua_marcacao">Abaixo adicione sua marcação</string>
     <string name="title_activity_historico_dados">Histórico Dados</string>
+    <string name="alterar_senha">Alterar senha</string>
+    <string name="sim">Sim</string>
+    <string name="n_o">Não</string>
+    <string name="hist_rico">Histórico</string>
+    <string name="adiciionar">Adiciionar</string>
 
 
 </resources>

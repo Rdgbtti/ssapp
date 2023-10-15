@@ -1,8 +1,15 @@
 package com.benedetti.ssapp.view.home
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
+import android.view.Window
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.benedetti.ssapp.R
 import com.benedetti.ssapp.adapter.AdapterMenu
@@ -23,7 +30,7 @@ class TelaPrincipal : AppCompatActivity(), AdapterMenu.ClickMenu {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding =ActivityTelaPrincipalBinding.inflate(layoutInflater)
+        binding = ActivityTelaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val recyclerMenu = binding.recyclerIconeMenu
@@ -34,12 +41,8 @@ class TelaPrincipal : AppCompatActivity(), AdapterMenu.ClickMenu {
         listaIconeMenu()
 
         binding.btDeslogar.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-
-            val voltarTelaLogin = Intent(this,FormLogin::class.java)
-            startActivity(voltarTelaLogin)
-            finish()
-
+            val mensagem :String? = "Tem certeza de que deseja sair?"
+            exibirCaixaDeDialogo(mensagem)
             }
         binding.btPerfil.setOnClickListener {
             IrParaPerfil()
@@ -93,5 +96,31 @@ class TelaPrincipal : AppCompatActivity(), AdapterMenu.ClickMenu {
         val intent = Intent(this, FormMeuPerfil::class.java)
         intent.putExtra("uid", usuarioAtual);
         startActivity(intent)
+    }
+
+     fun exibirCaixaDeDialogo(message: String?){
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.activity_caixa_dialogo)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val txtMensagem: TextView = dialog.findViewById(R.id.txtMensagem)
+        val btnSim: TextView = dialog.findViewById(R.id.btnSim)
+        val btnNao: TextView = dialog.findViewById(R.id.btnNao)
+
+        txtMensagem.text = message
+
+        btnSim.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+
+            val voltarTelaLogin = Intent(this,FormLogin::class.java)
+            startActivity(voltarTelaLogin)
+            finish()
+        }
+        btnNao.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 }
